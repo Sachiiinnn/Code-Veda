@@ -82,9 +82,11 @@ We were inspired by:
 ---
 
 ---
+
 ## 📄 License
 
 MIT License
+
 ---
 
 ## 📬 Contact
