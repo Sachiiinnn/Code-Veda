@@ -63,8 +63,8 @@ While LinkedIn is a powerful tool for professionals, it's easy to get distracted
 ## 🏁 Getting Started (For Developers)
 
 ```bash
-git clone https://github.com/yourusername/linkedin-pro-extension.git
-cd linkedin-pro-extension
+git clone https://github.com/Sachiiinnn/Code-Veda.git
+cd Code-Veda
 # Load as unpacked extension in Chrome
 ```
 
