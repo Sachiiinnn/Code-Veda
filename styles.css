@@ -1,0 +1,405 @@
+.linkedin-pro-extension {
+  /* Move all root variables inside the extension scope */
+  --primary: #0a66c2;
+  --bg-light: #f3efef;
+  --bg-dark: #18181b;
+  --text-light: hsl(240, 4%, 16%);
+  --text-dark: #fafafa;
+  --text-muted: #858587;
+  --toggle-off: #f9f8f8;
+  --toggle-on: var(--primary);
+  --toggle-off-dark: #d5d5dd;
+  --toggle-on-dark: var(--primary);
+  --card-bg: #ffffff;
+  --card-bg-dark: #27272a;
+  --tooltip-bg: #27272a;
+  --tooltip-color: #ffffff;
+}
+
+/* Scope body styles to extension */
+.linkedin-pro-extension {
+  font-family: monospace;
+  font-weight: 300;
+  width: 320px;
+  margin: 0;
+  padding: 15px;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased; 
+}
+
+.linkedin-pro-extension.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Scope all other styles to extension */
+.linkedin-pro-extension [data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+.linkedin-pro-extension [data-tooltip]:before {
+  content: attr(data-tooltip);
+  border: solid 1px var(--text-muted);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  padding: 6px 8px;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-color);
+  font-size: 11px;
+  line-height: 1.3;
+  white-space: normal;
+  max-width: 200px;
+  width: max-content;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.linkedin-pro-extension [data-tooltip]:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  border: 4px solid transparent;
+  border-top-color: var(--tooltip-bg);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.linkedin-pro-extension [data-tooltip]:hover:before,
+.linkedin-pro-extension [data-tooltip]:hover:after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.linkedin-pro-extension .info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  color: white;
+  font-size: 11px;
+  margin-left: 6px;
+  cursor: help;
+}
+
+.linkedin-pro-extension #extensionContent.disabled .section {
+  display: none;
+}
+
+/* Only keep these global styles for the writer mode functionality */
+.writer-mode-active .artdeco-hoverable-trigger {
+  z-index: auto !important;
+}
+
+.writer-mode-active .artdeco-hoverable-content {
+  display: none !important;
+}
+
+.writer-mode-active .editor-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Continue scoping remaining styles */
+.linkedin-pro-extension .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.linkedin-pro-extension .logo {
+  margin-top: 5px;
+  line-height: 1;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.linkedin-pro-extension .logo-li {
+  color: var(--primary);
+}
+
+.linkedin-pro-extension .subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.linkedin-pro-extension .controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.linkedin-pro-extension .control-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--toggle-off);
+  color: var(--text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.linkedin-pro-extension.dark .control-button {
+  background: var(--toggle-off-dark);
+  color: var(--text-dark);
+}
+
+.linkedin-pro-extension .power-button {
+  background: var(--primary);
+  color: white;
+}
+
+.linkedin-pro-extension .power-button.inactive {
+  background: var(--toggle-off);
+  color: var(--text-light);
+}
+
+.linkedin-pro-extension.dark .power-button {
+  background: var(--primary);
+  color: white;
+}
+
+.linkedin-pro-extension.dark .power-button.inactive {
+  background: var(--toggle-off-dark);
+}
+
+.linkedin-pro-extension .section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.linkedin-pro-extension.dark .section {
+  background: var(--card-bg-dark);
+}
+
+.linkedin-pro-extension .section-title {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+}
+
+.linkedin-pro-extension .toggle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linkedin-pro-extension .toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.linkedin-pro-extension .toggle-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+}
+
+.linkedin-pro-extension .toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+}
+
+.linkedin-pro-extension .toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.linkedin-pro-extension .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toggle-off);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 24px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.linkedin-pro-extension.dark .slider {
+  background-color: var(--toggle-off-dark);
+}
+
+.linkedin-pro-extension .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.linkedin-pro-extension input:checked + .slider {
+  background-color: var(--toggle-on);
+}
+
+.linkedin-pro-extension.dark input:checked + .slider {
+  background-color: var(--toggle-on-dark);
+}
+
+.linkedin-pro-extension input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.linkedin-pro-extension input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+.linkedin-pro-extension .footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  margin-top: 12px;
+  border-top: 1px solid var(--toggle-off);
+}
+
+.linkedin-pro-extension.dark .footer {
+  border-top-color: var(--toggle-off-dark);
+}
+
+.linkedin-pro-extension .footer-button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: var(--toggle-off);
+  color: var(--text-light);
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.linkedin-pro-extension.dark .footer-button {
+  background: var(--toggle-off-dark);
+  color: black
+}
+
+.linkedin-pro-extension .footer-button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.linkedin-pro-extension .footer-button:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-right: 1px;
+}
+
+.linkedin-pro-extension .footer-button:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.linkedin-pro-extension .credits {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.linkedin-pro-extension .credits a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.linkedin-pro-extension .credits a:hover {
+  color: var(--toggle-on);
+}
+
+.linkedin-pro-extension .heart {
+  color: #e11d48;
+}
+
+.linkedin-pro-extension .navbar-controls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.linkedin-pro-extension .navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.linkedin-pro-extension .navbar-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--toggle-off);
+  color: var(--text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.linkedin-pro-extension.dark .navbar-toggle {
+  background-color: var(--toggle-off-dark);
+  color: var(--text-dark);
+}
+
+.linkedin-pro-extension .navbar-toggle.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+.linkedin-pro-extension .navbar-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+}
